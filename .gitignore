@@ -1,0 +1,31 @@
+# secrets — never commit
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+
+# OS / editor
+.DS_Store
+Thumbs.db
+
+# deps / build
+node_modules/
+dist/
+build/
+.next/
+
+# vendored upstreams (cloned separately; nested .git) — not part of the template
+_vendor/
+
+# excluded per project decision
+agentic-os/
+agentic-os-OPS/
+agentic-os-prd.md
+agentic-os-prd-fullspectrum.xml
+docs/
+
+# .cursor: keep only our rules + mcp.json; ignore cloned MCP sub-repos (own .git)
+.cursor/*
+!.cursor/rules/
+!.cursor/mcp.json

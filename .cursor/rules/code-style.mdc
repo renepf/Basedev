@@ -1,0 +1,35 @@
+---
+description: Coding standards and style guidelines
+globs:
+alwaysApply: true
+---
+
+# Coding Standards
+
+## General Principles
+
+- Write clean, readable, maintainable code.
+- Follow language-specific best practices for whatever stack this repo uses.
+- Use meaningful variable and function names.
+- Keep functions and files small and focused.
+- Frontend element nesting should not go deeper than five levels.
+- Use semantic class/identifier names wherever possible.
+- Reach for the standard library before custom code, and a native platform feature before a new dependency (see the `ponytail-reviewer` agent).
+
+## Formatting & Linting
+
+- Use the project's linter and formatter.
+- Fix all linter and formatter warnings before opening a PR.
+
+## Commit Messages
+
+- Conventional commits: `type(scope): description`.
+- Reference the relevant GitHub issue in the body (e.g. `closes #123`).
+
+## Estimation
+
+- Estimate work on a coarse scale (e.g. S/M/L or 1/3/5 points); the `product-owner` agent handles triage and sizing.
+
+## Questions?
+
+If unsure about a style rule, ask the user or follow the dominant pattern already in the codebase.

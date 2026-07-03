@@ -1,0 +1,40 @@
+{
+  "mcpServers": {
+    "github": {
+      "command": "/Users/pfist/Basedev/mcps/github/wrapper.sh",
+      "args": []
+    },
+    "gemini": {
+      "command": "/Users/pfist/Basedev/mcps/gemini/wrapper.sh",
+      "args": []
+    },
+    "blender": {
+      "command": "/Users/pfist/Basedev/mcps/blender/wrapper.sh",
+      "args": []
+    },
+    "figma": {
+      "command": "/Users/pfist/Basedev/mcps/figma/wrapper.sh",
+      "args": []
+    },
+    "whatsapp": {
+      "command": "/Users/pfist/Basedev/mcps/whatsapp/wrapper.sh",
+      "args": []
+    },
+    "strands": {
+      "command": "/Users/pfist/Basedev/mcps/strands/wrapper.sh",
+      "args": []
+    },
+    "n8n": {
+      "command": "/Users/pfist/Basedev/mcps/n8n/wrapper.sh",
+      "args": []
+    },
+    "apollo": {
+      "command": "/Users/pfist/Basedev/mcps/apollo/wrapper.sh",
+      "args": []
+    },
+    "notion": {
+      "command": "/Users/pfist/Basedev/mcps/notion/wrapper.sh",
+      "args": []
+    }
+  }
+}

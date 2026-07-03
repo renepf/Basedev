@@ -1,0 +1,28 @@
+---
+description: Documentation philosophy and information architecture
+alwaysApply: false
+---
+
+# Documentation Philosophy
+
+How docs are organized across this repo and its sibling OPS repo.
+
+## Where docs live
+
+- **This repo** contains only code-specific instructions and conventional READMEs.
+- **All process documentation** (PRDs, research, implementation plans, decisions, handover summaries) lives in the sibling **`<PROJECT>-OPS`** repo — never floating in this codebase's root.
+- **`<PROJECT>-OPS/INDEX.md`** is the doc registry and the orchestrator's context wiki. Read it first to locate any doc; add a row whenever an agent writes a new doc.
+
+## Structure of `<PROJECT>-OPS`
+
+- `issues/<N>-<slug>/` — per-GitHub-issue docs. EPIC → `PRD.md` + `research.md`. Story → `implementation-plan.md`.
+- `comms/` — agent handover summaries, one per run: `YYYY-MM-DD-<agent>-<scope>.md`.
+- `INDEX.md` — the registry/wiki, one row per doc.
+
+A skeleton to copy lives at `_ops-template/` in this repo.
+
+## Rules
+
+- When an agent produces a doc, it (1) writes it under `issues/<N>-<slug>/`, (2) comments on the GitHub issue linking it, (3) adds a row to `INDEX.md`.
+- Avoid static deep links to external docs that may move; prefer a base reference and navigate by topic.
+- Keep this repo's READMEs minimal and code-focused.

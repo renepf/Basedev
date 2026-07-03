@@ -1,0 +1,50 @@
+---
+description: AI guidelines — GitHub-flow git workflow and the local OPS handover model
+globs:
+alwaysApply: true
+---
+
+# AI Guidelines
+
+Guidelines for AI agents working in this repository. The agent pipeline lives in `.claude/agents/`; the orchestrator sequences it. Process docs live in the sibling `<PROJECT>-OPS` repo, not in this codebase.
+
+## Source of truth
+
+- **Code + conventional READMEs** live in this repo.
+- **All process docs** (PRDs, research, implementation plans, handover summaries) live in the sibling **`<PROJECT>-OPS`** repo.
+- **`<PROJECT>-OPS/INDEX.md`** is the doc registry and the orchestrator's context wiki — **read it first** to locate any doc; never sweep the tree.
+- Issue tracking and review happen on **GitHub** (Issues + Pull Requests). Reference the issue (`#NNN`) in commit bodies and PR descriptions.
+
+## AI-Specific Git Workflow Rules
+
+**CRITICAL: AI assistants MUST follow these rules for any code change:**
+
+1. **NEVER commit directly to the integration branch** (default `main`; some repos use `develop`/`rdev`). All commits go to a feature branch. If you're not on one, create it first.
+2. **One topic per feature branch.** Do not mix unrelated changes. Naming: `feature/<slug>`, `fix/<slug>`, `docs/<slug>`, `refactor/<slug>`, `test/<slug>`, `chore/<slug>`.
+3. **Separate concerns into different branches** — infra, docs, fixes, and features each get their own branch.
+4. **Before changing anything, verify the current branch** with `git status`. If on the integration branch, branch off immediately.
+5. **Commit message format:** conventional commits — `type(scope): description`. Reference the GitHub issue in the body.
+6. **When switching topics, switch branches.** Commit/push current work first.
+
+## Standard Workflow
+
+```bash
+git checkout <integration-branch>      # default main
+git pull
+git checkout -b feature/descriptive-name
+# make focused changes
+git add <files>
+git commit -m "feat(scope): description"   # body: closes #NNN
+git push -u origin feature/descriptive-name
+gh pr create --base <integration-branch>   # open PR; do not merge your own
+```
+
+Do not merge your own PRs — the pipeline's `pr-reviewer` gate and the user's approval come first.
+
+## Handover discipline
+
+Every agent run writes a handover summary to `<PROJECT>-OPS/comms/YYYY-MM-DD-<agent>-<scope>.md`, and registers any doc it produces in `<PROJECT>-OPS/INDEX.md`. See `.claude/agents/orchestrator.md` for the full gate sequence.
+
+## Questions?
+
+If a guideline is unclear, ask the user before proceeding. Do not invent process — mirror what the repo already does.

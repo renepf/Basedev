@@ -1,0 +1,12 @@
+# Attribution
+
+Baked from **agency-agents** (MIT License) — vendored at `_vendor/agency-agents/`.
+
+- Source: https://github.com/msitarzewski/agency-agents
+- Pinned commit: `1189f0f9bc79a1883fee958fed627c6d11581eb7`
+- License: MIT (see adjacent LICENSE file; upstream copyright retained)
+- Baked into this template: 2026-06-28
+
+Do not hand-edit these files in place — they are upstream copies. To update,
+re-pull in `_vendor/` and re-bake. Local overrides belong in the top-level
+`.claude/agents/`, `.claude/commands/`, or a project skill.

@@ -1,0 +1,30 @@
+---
+description: Contribution process and pull request guidelines
+alwaysApply: false
+---
+
+# Contributing
+
+## Contribution Process
+
+1. **Branch off the integration branch** (default `main`) — one topic per branch.
+2. **Write clear, well-documented code** and include tests where appropriate.
+3. **Follow the coding standards** in the code-style rule.
+4. **Open a Pull Request** on GitHub with a clear description; reference the relevant issue (`closes #NNN`).
+5. **Let the review pipeline run** — `qa-engineer`, `peer-reviewer`, `ponytail-reviewer`, then `pr-reviewer`.
+6. **Address feedback** and update the PR.
+7. **Merge only after approval** and passing CI. Do not merge your own PR.
+
+## Code Reviews
+
+- All code is reviewed before merge — by the agent pipeline and/or a human.
+- Keep feedback constructive and focused on code quality and project goals.
+
+## Issue Integration
+
+- Reference the relevant GitHub issue in the PR title or body (e.g. `closes #123`).
+- Process docs for an issue live in `<PROJECT>-OPS/issues/<N>-<slug>/`, registered in `<PROJECT>-OPS/INDEX.md`.
+
+## Questions?
+
+If unsure about the process, ask the user or consult `.claude/agents/orchestrator.md` for the gate sequence.
