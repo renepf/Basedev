@@ -29,3 +29,7 @@ docs/
 .cursor/*
 !.cursor/rules/
 !.cursor/mcp.json
+
+# runtime lock + foreign worktrees
+.claude/scheduled_tasks.lock
+.worktrees/
